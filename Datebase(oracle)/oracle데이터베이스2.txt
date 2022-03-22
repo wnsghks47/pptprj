@@ -1,0 +1,49 @@
+select 정수컬럼,sum(더하고싶은 컬럼) from 테이블 group by 정수컬럼; 정수컬럼에대한 값을 더해 조회
+
+to_char 숫자타입을 문자타입으로 변환하는 함수
+
+alter table 컬럼을 추가할 테이블이름 add (추가할 컬럼이름 타입); 컬럼추가
+alter table 컬럼을 추가할 테이블이름 modify (추가할 컬럼이름 타입); 컬럼타입 수정
+ALTER TABLE EMPLOYEES2 drop column MANAGER_ID; 컬럼 삭제
+drop table 삭제할테이블이름; 테이블삭제
+rename 테이블이름 to 변경할테이블이름; 테이블 이름 바꾸는방법
+truncate table 테이블이름; 레코드 삭제
+
+-------------------------------------서브쿼리---------------------------
+다중 쿼리를 가져올때는 IN 을 사용
+any 함수는 둘중 하나보다 큰걸 다조회하고
+all 은 둘중에 가장큰것부터 조회
+
+
+
+
+SELECT employee_id, first_name, last_name, salary
+FROM employees
+
+where salary < (select round(avg(salary)) from employees);
+SELECT 찾고자하는 컬럼
+
+FROM 테이블
+where salary < (select round(avg(salary)) from employees); 서브쿼리는 WHERE절에서 사용가능
+
+------------------------------------------------------------------------------------
+insert into 테이블(컬럼)  values(레코드);
+
+insert into 테이블 values(레코드);
+
+update 테이블 set 변경컬럼 = 값 where 변경할 컬럼 = '레코드'; 레코드 변경
+
+delete 테이블 where 삭제할컬럼 = '레코드'; 선택한 컬럼안의 레코드만 삭제
+
+delete 테이블;  테이블안에 있는거 모두 삭제 
+
+commit; 현재까지한 내용을 저장
+
+rollback; commit을 한시점부터 다시불러오기
+
+----------------------------------무결성 제약조건--------------------------------------
+not null : 널값을 입력 못하게한다
+unique : 중복된 값이 입력되지 못하게 하는 조건
+primary key : not null + unique의 의미
+foreign key(외래키) : 다른 테이블의 필드(컬럼) 를 참조해서 무결성을 검사하는 조건
+constraints : 강제로 제약을 하겠다는 함수

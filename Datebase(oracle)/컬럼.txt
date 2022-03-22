@@ -1,0 +1,15 @@
+1. 테이블 컬럼 추가하기(ALTER TABLE ADD)
+
+[문법] ALTER TABLE 테이블명 ADD(컬럼명 데이타타입(사이즈));
+
+2. 테이블 컬럼 수정하기(ALTER TABLE MODIFY)
+
+[문법] ALTER TABLE 테이블명 MODIFY(컬럼명 테이타타입(사이즈));
+
+3. 테이블 컬럼 삭제하기(ALTER TABLE DROP)
+
+[문법] ALTER TABLE 테이블명 DROP COLUMN 컬럼명
+
+4. 테이블 컬럼 이름 변경하기(ALTER TABLE RENAME)
+
+[문법] ALTER TABLE 테이블명 RENAME COLUMN 원래컬럼명 TO 바꿀컬럼명;
